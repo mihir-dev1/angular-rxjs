@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+// custom 
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.list li {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 13px;
+    margin-bottom: 10px;
+}
+
+.success li{
+    color: green !important;
+    background: #00800042 !important;
+    border: 1px solid !important;
+}
+
+.error li {
+    background: #ff00005c !important;
+    color: red !important;
+    border: 1px solid !important;
+}
