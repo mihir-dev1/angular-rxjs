@@ -12,8 +12,8 @@
         <div class="col-md-6">
             <strong>Ex- 02 (Custom Interval Observable)</strong>
             <hr>
-            <ul class="list success" [ngClass]="listStatus === 'completed' ? 'success' : listStatus === 'error' ? 'error' : ''">
-                <li>Angular</li>
+            <ul id="customInterval" class="list" [ngClass]="customIntervalStatus === 'completed' ? 'success' : customIntervalStatus === 'error' ? 'error' : ''">
+                <!-- <li>Angular</li> -->
             </ul>
         </div>
     </div>
@@ -24,8 +24,11 @@
             <div class="bg-light p-2 border rounded"> <strong>Random Names: </strong>
                 'Mihir', 'Kumar', 'Trivedi','Ram',Krishna,'Laskhman' </div>
             <hr>
-            <p>Current Name : <strong class="text-success">Mihir </strong></p>
-            <span class="badge badge-success">Success</span>
+            <p>Current Name : <strong>{{currentName}} </strong></p>
+            <!-- {{badgeStatus == 'completed' ? 'Success' : 'badge-success' : badgeStatus == 'error' ? 'Error': 'Running'}} -->
+            <span class="badge" [ngClass]="badgeStatus === 'completed' ? 'badge-success' : badgeStatus == 'error' ? 'badge-danger': 'badge-primary' ">
+                {{badgeStatus == 'completed' ? 'Success' : badgeStatus == 'error' ? 'Error' : 'Running'}}
+            </span>
         </div>
     </div>
 </div>
