@@ -1,0 +1,55 @@
+<div class="my-3">
+    <h2>Reply Subject</h2>
+    <br>
+    <div class="row">
+        <div class="col">
+            <h3> {{isToggle ? "Interval Started" : "Add Video"}}</h3>
+        </div>
+        <div class="col text-right">
+
+            <div class="btn btn-warning" (click)='toggleMethod()'>Toggle Method</div>
+
+        </div>
+    </div>
+    <hr *ngIf='!isToggle'>
+    <div class="row justify-content-center" *ngIf='!isToggle'>
+        <div class="col-md-4">
+            <input type="text" class="form-control" #videoinput (keyup.enter)='addVideoName(videoinput)'>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-success" (click)='addVideoName(videoinput)'>Add Video</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>User - 01</strong>
+            <hr>
+            <ul class="video-list" *ngFor="let item of userList1">
+                <li><strong>Video: </strong>{{item}}</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <strong>User - 02</strong>
+            <hr>
+            <ul class="video-list" *ngFor="let item of userList2">
+                <li><strong>Video: </strong>{{item}}</li>
+            </ul>
+            <button class="btn" (click)='subscribeMethodTwo()'
+                [ngClass]="subscribeStatusTwo ? 'btn-danger' : 'btn-success'">
+                {{subscribeStatusTwo ? 'Unsubscribe rxjsTrend' : 'Subscribe rxjsTrend'}}
+            </button>
+        </div>
+        <div class="col-md-4">
+            <strong>User - 03</strong>
+            <hr>
+            <ul class="video-list" *ngFor="let item of userList3">
+                <li><strong>Video: </strong>{{item}}</li>
+            </ul>
+            <button class="btn" (click)='subscribeMethodThree()'
+                [ngClass]="subscribeStatusThree ? 'btn-danger' : 'btn-success'">
+                {{subscribeStatusThree ? 'Unsubscribe rxjsTrend' : 'Subscribe rxjsTrend'}}
+            </button>
+        </div>
+    </div>
+</div>

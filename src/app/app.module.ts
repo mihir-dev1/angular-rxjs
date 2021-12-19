@@ -19,6 +19,12 @@ import { TapComponent } from './observable/tap/tap.component';
 import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
+import { SubjectComponent } from './observable/subject/subject.component';
+import { Comp1Component } from './components/comp1/comp1.component';
+import { Comp2Component } from './components/comp2/comp2.component';
+import { Comp3Component } from './components/comp3/comp3.component';
+import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { HttpClientModule } from '@angular/common/http';
     FilterComponent,
     TapComponent,
     TakeComponent,
-    RetryComponent
+    RetryComponent,
+    DebouncetimeComponent,
+    SubjectComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    ReplaySubjectComponent
   ],
   imports: [
     BrowserModule,
