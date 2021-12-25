@@ -25,6 +25,10 @@ import { Comp1Component } from './components/comp1/comp1.component';
 import { Comp2Component } from './components/comp2/comp2.component';
 import { Comp3Component } from './components/comp3/comp3.component';
 import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
+import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
+import { ConcatComponent } from './observable/concat/concat.component';
+import { MergeComponent } from './observable/merge/merge.component';
+import { MergemapComponent } from './observable/mergemap/mergemap.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,11 @@ import { ReplaySubjectComponent } from './observable/replay-subject/replay-subje
     Comp1Component,
     Comp2Component,
     Comp3Component,
-    ReplaySubjectComponent
+    ReplaySubjectComponent,
+    AsyncSubjectComponent,
+    ConcatComponent,
+    MergeComponent,
+    MergemapComponent
   ],
   imports: [
     BrowserModule,
