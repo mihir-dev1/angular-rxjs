@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
+import { ConcatMobileNotificationComponent } from './observable/concat-mobile-notification/concat-mobile-notification.component';
 import { ConcatComponent } from './observable/concat/concat.component';
+import { ConcatmapComponent } from './observable/concatmap/concatmap.component';
 import { CustomComponent } from './observable/custom/custom.component';
 import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
 import { FilterComponent } from './observable/filter/filter.component';
@@ -17,6 +19,8 @@ import { PluckComponent } from './observable/pluck/pluck.component';
 import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { SubjectComponent } from './observable/subject/subject.component';
+import { SwitchMapSearchComponent } from './observable/switch-map-search/switch-map-search.component';
+import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
 import { TakeComponent } from './observable/take/take.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
@@ -108,8 +112,24 @@ const routes: Routes = [
         component: MergeComponent
       },
       {
-        path:'mergeMap',
-        component:MergemapComponent
+        path: 'mergeMap',
+        component: MergemapComponent
+      },
+      {
+        path: 'concatMap',
+        component: ConcatmapComponent
+      },
+      {
+        path: 'mobile-notification',
+        component: ConcatMobileNotificationComponent
+      },
+      {
+        path: 'switch-map',
+        component: SwitchMapComponent
+      },
+      {
+        path:'switch-map-search',
+        component:SwitchMapSearchComponent
       }
     ]
   },

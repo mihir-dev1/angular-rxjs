@@ -29,6 +29,11 @@ import { AsyncSubjectComponent } from './observable/async-subject/async-subject.
 import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeComponent } from './observable/merge/merge.component';
 import { MergemapComponent } from './observable/mergemap/mergemap.component';
+import { ConcatmapComponent } from './observable/concatmap/concatmap.component';
+import { ConcatMobileNotificationComponent } from './observable/concat-mobile-notification/concat-mobile-notification.component';
+import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
+import { SwitchMapSearchComponent } from './observable/switch-map-search/switch-map-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,12 +62,18 @@ import { MergemapComponent } from './observable/mergemap/mergemap.component';
     AsyncSubjectComponent,
     ConcatComponent,
     MergeComponent,
-    MergemapComponent
+    MergemapComponent,
+    ConcatmapComponent,
+    ConcatMobileNotificationComponent,
+    SwitchMapComponent,
+    SwitchMapSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

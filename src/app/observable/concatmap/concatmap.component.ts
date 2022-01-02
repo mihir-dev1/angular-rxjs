@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { from, of } from 'rxjs';
-import { map, mergeAll, mergeMap } from 'rxjs/operators';
+import { map, concatAll, concatMap, delay, mergeMap } from 'rxjs/operators';
 import { CommonService } from 'src/app/core/common.service';
 
 @Component({
-  selector: 'app-mergemap',
-  templateUrl: './mergemap.component.html',
-  styleUrls: ['./mergemap.component.scss']
+  selector: 'app-concatmap',
+  templateUrl: './concatmap.component.html',
+  styleUrls: ['./concatmap.component.scss']
 })
-export class MergemapComponent implements OnInit {
+export class ConcatmapComponent implements OnInit {
+
 
   constructor(private _common: CommonService) { }
 
@@ -27,30 +28,41 @@ export class MergemapComponent implements OnInit {
       // )
     })
 
-    // Ex-02 | map + mergeAll
+    // Ex-02 | map + concatAll
     source.pipe(
       map(res => this.getVideoList(res)),
-      mergeAll()
+      concatAll()
     ).subscribe(res => {
       // console.log(res);
       this._common.addElement(res, 'elContainer2')
 
     })
 
-    // Ex-03 | mergeMap
+    // Ex-03 | concatMap
     source.pipe(
-      mergeMap(res => this.getVideoList(res))
+      concatMap(res => this.getVideoList(res))
       // map(res => this.getVideoList(res)),
-      // mergeAll()
+      // concatAll()
     ).subscribe(res => {
       // console.log(res);
       this._common.addElement(res, 'elContainer3')
 
     })
+
+    // Ex-04 | mergeMap
+    source.pipe(
+      mergeMap(res => this.getVideoList(res))
+      // map(res => this.getVideoList(res)),
+      // concatAll()
+    ).subscribe(res => {
+      // console.log(res);
+      this._common.addElement(res, 'elContainer4')
+
+    })
   }
 
   getVideoList(Data) {
-    return of(Data + ' Video uploaded');
+    return of(Data + ' Video uploaded').pipe(delay(2000));
   }
 
 }

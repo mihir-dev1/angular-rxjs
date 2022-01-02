@@ -1,0 +1,39 @@
+<div class="my-3">
+    <h2>SwitchMap</h2>
+    <br>
+    <h5>Search Video</h5>
+    <div class="mt-3">
+        <form #searchForm="ngForm">
+            <input type="text" ngModel placeholder="Search" name="searchTerm" class="form-control form-control-lg" required autocomplete="off">
+        </form>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="result" *ngIf="searchResult">
+        <div class="d-flex" style="justify-content: space-between;">
+            <h5>Search Result</h5>
+            <span class="ml-auto text-muted">{{searchResult.length}} Result found...</span>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Thumbnail</th>
+                    <th scope="col">Title & Description</th>
+                    <!-- <th scope="col"></th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of searchResult; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <th><img src="{{item.thumb}}" width="120" alt=""></th>
+                    <th>
+                        <strong>{{item.title}}</strong>
+                        <p>{{item.description}}</p>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

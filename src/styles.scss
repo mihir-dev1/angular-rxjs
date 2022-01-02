@@ -25,3 +25,49 @@ ul.list li {
     color: red !important;
     border: 1px solid !important;
 }
+
+
+// notification 
+
+.notification {
+    background: #fff;
+    position: absolute;
+    top:55%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.notification .item {
+    overflow: hidden;
+}
+
+.notification .item:not(:first-child) {
+    border: 1px solid #f5f5f5;
+}
+
+.notification .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 0 10px;
+}
+
+.notification .header .time {
+    opacity: .3;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.notification .body {
+    font-size: 13px;
+    line-height: normal;
+}
+
+.notification .body .item-img {
+    float: right;
+    margin: 0 0 0 10px;
+    border: 1px solid #989898;
+}
