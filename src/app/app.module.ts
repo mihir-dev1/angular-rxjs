@@ -34,6 +34,8 @@ import { ConcatMobileNotificationComponent } from './observable/concat-mobile-no
 import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
 import { SwitchMapSearchComponent } from './observable/switch-map-search/switch-map-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
+import { ShareReplayComponent } from './observable/share-replay/share-replay.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ConcatmapComponent,
     ConcatMobileNotificationComponent,
     SwitchMapComponent,
-    SwitchMapSearchComponent
+    SwitchMapSearchComponent,
+    ExhaustMapComponent,
+    ShareReplayComponent
   ],
   imports: [
     BrowserModule,

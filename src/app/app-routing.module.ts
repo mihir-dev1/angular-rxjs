@@ -6,6 +6,7 @@ import { ConcatComponent } from './observable/concat/concat.component';
 import { ConcatmapComponent } from './observable/concatmap/concatmap.component';
 import { CustomComponent } from './observable/custom/custom.component';
 import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
+import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
 import { FilterComponent } from './observable/filter/filter.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { IntervalComponent } from './observable/interval/interval.component';
@@ -18,6 +19,7 @@ import { OfFromComponent } from './observable/of-from/of-from.component';
 import { PluckComponent } from './observable/pluck/pluck.component';
 import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 import { RetryComponent } from './observable/retry/retry.component';
+import { ShareReplayComponent } from './observable/share-replay/share-replay.component';
 import { SubjectComponent } from './observable/subject/subject.component';
 import { SwitchMapSearchComponent } from './observable/switch-map-search/switch-map-search.component';
 import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
@@ -28,8 +30,8 @@ import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ObservableComponent
+    path: 'observable',
+    component: ListComponent
   },
   {
     path: 'promise',
@@ -130,12 +132,20 @@ const routes: Routes = [
       {
         path:'switch-map-search',
         component:SwitchMapSearchComponent
+      },
+      {
+        path:'exhaust-map',
+        component:ExhaustMapComponent
+      },
+      {
+        path:'share-replay',
+        component:ShareReplayComponent
       }
     ]
   },
   {
     path: '**',
-    redirectTo: 'observable'
+    redirectTo: '/observable'
   }
 ];
 

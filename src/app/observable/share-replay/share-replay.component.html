@@ -1,0 +1,64 @@
+<div class="m-3">
+    <div class="m-3">
+        <h2>Share Replay</h2>
+        <br>
+        <div class="row">
+            <strong>Men: <span class="text-primary">Item List</span></strong>
+
+            <div class="col-4" *ngFor="let item of menItemList | async">
+                <div class="card m-2">
+                    <img src="{{item.image}}" width="200" height="200" class="card-img-top bg-dark" alt="">
+                    <div class="card-title ml-2">
+                        <strong>{{item.category}}</strong>
+                    </div>
+                    <div class="card-body">
+                        <strong>Price</strong>
+                        <p> {{item.price}} </p>
+                        <strong>Description</strong>
+                        <p> {{item.description | slice:0:50 }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <strong>Women: <span class="text-warning">Item List</span></strong>
+            <div class="col-4"*ngFor="let item of womenItemList | async" >
+                <div class="card m-2">
+                    <img src="{{item.image}}" width="200" height="200" class="card-img-top bg-dark" alt="">
+                    <div class="card-title ml-2">
+                        <strong>{{item.category}}</strong>
+                    </div>
+                    <div class="card-body">
+                        <strong>Price</strong>
+                        <p> {{item.price}} </p>
+                        <strong>Description</strong>
+                        <p> {{item.description | slice:0:50 }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <strong>All Products </strong>
+            <div class="col-3" *ngFor="let item of getAllProductList | async">
+                <div class="card m-2">
+                    <img src="{{item.image}}" width="200" height="200" class="card-img-top bg-dark" alt="">
+                    <div class="card-title ml-2">
+                        <strong>{{item.category}}</strong>
+                    </div>
+                    <div class="card-body">
+                        <strong>Price</strong>
+                        <p> {{item.price}} </p>
+                        <strong>Description</strong>
+                        <p> {{item.description | slice:0:50 }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

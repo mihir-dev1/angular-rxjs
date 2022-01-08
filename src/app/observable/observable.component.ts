@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-observable',
@@ -8,12 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ObservableComponent implements OnInit {
 
-  constructor(private _router:ActivatedRoute) {
-    // console.log(this._router.component?.toString(),'this._router.component');
-    
-    
-    // console.log(this._router.pathFromRoot,'this._router.pathFromRoot');
-    
+  public isMainPage: boolean = true;
+
+  constructor(private _router: Router) {
+    this._router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/observable') {
+          this.isMainPage = false;
+        } else {
+          this.isMainPage = true;
+        }
+      }
+    })
   }
 
   ngOnInit(): void {
