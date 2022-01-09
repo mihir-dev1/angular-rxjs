@@ -7,10 +7,9 @@ import { CommonService } from 'src/app/core/common.service';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
-
   // subscription
   subscriptionOne: Subscription;
 
@@ -18,21 +17,22 @@ export class MapComponent implements OnInit {
 
   subscriptionThree: Subscription;
 
-  // Message 
+  // Message
   message: any;
   messageTwo: any;
   messageThree: any;
 
-  constructor(private _common:CommonService) { }
+  constructor(private _common: CommonService) {}
 
   ngOnInit(): void {
-
     const videoBroadCast = interval(1000);
     // Example 01
-    this.subscriptionOne = videoBroadCast.pipe(map(data => 'Video' + +data)).subscribe(res => {
-      console.log(res, 'res');
-      this.message = res;
-    })
+    this.subscriptionOne = videoBroadCast
+      .pipe(map((data) => 'Video' + +data))
+      .subscribe((res) => {
+        console.log(res, 'res');
+        this.message = res;
+      });
 
     setTimeout(() => {
       this.subscriptionOne.unsubscribe();
@@ -43,54 +43,51 @@ export class MapComponent implements OnInit {
     }, 10000);
 
     // Example 02
-    this.subscriptionTwo = videoBroadCast.pipe(map(data => 10 * data)).subscribe(res => {
-      this.messageTwo = res;
-    })
+    this.subscriptionTwo = videoBroadCast
+      .pipe(map((data) => 10 * data))
+      .subscribe((res) => {
+        this.messageTwo = res;
+      });
 
     // Example 03
-    const membersList = from(
-      [
-        {
-          id: 1,
-          name: 'Mihir'
-        },
-        {
-          id: 2,
-          name: 'Reyesh'
-        },
-        {
-          id: 3,
-          name: 'Dhiraj'
-        },
-        {
-          id: 4,
-          name: 'Lucky'
-        },
-        {
-          id: 5,
-          name: 'Hardik'
-        },
-        {
-          id: 6,
-          name: 'Ram'
-        },
-        {
-          id: 7,
-          name: 'Kirshna'
-        },
-        {
-          id: 8,
-          name: 'Shive'
-        }
-      ]
-    )
+    const membersList = from([
+      {
+        id: 1,
+        name: 'Mihir',
+      },
+      {
+        id: 2,
+        name: 'Reyesh',
+      },
+      {
+        id: 3,
+        name: 'Dhiraj',
+      },
+      {
+        id: 4,
+        name: 'Lucky',
+      },
+      {
+        id: 5,
+        name: 'Hardik',
+      },
+      {
+        id: 6,
+        name: 'Ram',
+      },
+      {
+        id: 7,
+        name: 'Kirshna',
+      },
+      {
+        id: 8,
+        name: 'Shive',
+      },
+    ]);
 
-    membersList.pipe(
-      map(data => data.name)
-    ).subscribe(res =>{
+    membersList.pipe(map((data) => data.name)).subscribe((res) => {
       // elId
-      this._common.addElement(res,'elId');
-    })
+      this._common.addElement(res, 'elId');
+    });
   }
-
 }
