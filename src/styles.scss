@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-// custom 
+// custom
 ul.list {
     list-style-type: none;
     margin: 0;
@@ -27,7 +27,7 @@ ul.list li {
 }
 
 
-// notification 
+// notification
 
 .notification {
     background: #fff;
@@ -71,3 +71,35 @@ ul.list li {
     margin: 0 0 0 10px;
     border: 1px solid #989898;
 }
+
+// combine latest class
+
+.red,.blue,.green,.yellow,.violet,.purple {
+  padding: 10px 32px;
+  background-color: red;
+  display: inline-block;
+  margin: 10px;
+  width: 120px;
+  text-align: center;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.purple {
+  background-color: purple;
+}
+

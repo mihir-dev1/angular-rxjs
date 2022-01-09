@@ -49,5 +49,5 @@ export class CommonService {
 
   getAllProduct() {
     return this.http.get(this.ProductUrl);
-  } 
+  }
 }

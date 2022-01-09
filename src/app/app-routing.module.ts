@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
+import { CatchErrorComponent } from './observable/catch-error/catch-error.component';
+import { CombineLatestComponent } from './observable/combine-latest/combine-latest.component';
 import { ConcatMobileNotificationComponent } from './observable/concat-mobile-notification/concat-mobile-notification.component';
 import { ConcatComponent } from './observable/concat/concat.component';
 import { ConcatmapComponent } from './observable/concatmap/concatmap.component';
@@ -26,6 +28,7 @@ import { SwitchMapComponent } from './observable/switch-map/switch-map.component
 import { TakeComponent } from './observable/take/take.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
+import { ZipForkJoinComponent } from './observable/zip-fork-join/zip-fork-join.component';
 import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
@@ -140,6 +143,18 @@ const routes: Routes = [
       {
         path:'share-replay',
         component:ShareReplayComponent
+      },
+      {
+        path:'combine-latest',
+        component:CombineLatestComponent
+      },
+      {
+        path:'zip-forkJoin',
+        component:ZipForkJoinComponent
+      },
+      {
+        path:'catch-error',
+        component:CatchErrorComponent
       }
     ]
   },

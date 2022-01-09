@@ -1,0 +1,43 @@
+<div class="my-3">
+  <h2>CatchError & ThrowError</h2>
+  <br />
+  <button class="btn btn-danger p-2 border-rounded" (click)="getProductList()">
+    Get Products
+  </button>
+
+  <button *ngIf="loader" class="btn btn-primary m-3">
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    >
+    </span>
+  </button>
+  <div class="alert alert-danger m-2" *ngIf="errorMsg">
+    <strong>Danger!</strong> {{errorMsg}}
+  </div>
+  <div class="row mt-2">
+    <!-- <strong>Men: <span class="text-primary">Item List</span></strong> -->
+
+    <div class="col-4" *ngFor="let item of productList">
+      <div class="card m-2">
+        <img
+          src="{{ item.image }}"
+          width="200"
+          height="200"
+          class="card-img-top bg-dark"
+          alt=""
+        />
+        <div class="card-title ml-2">
+          <strong>{{ item.category }}</strong>
+        </div>
+        <div class="card-body">
+          <strong>Price</strong>
+          <p>{{ item.price }}</p>
+          <strong>Description</strong>
+          <p>{{ item.description | slice: 0:50 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
